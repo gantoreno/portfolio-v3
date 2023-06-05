@@ -1,0 +1,59 @@
+---
+import Link from "./Link.astro";
+import ThemeSwitch from "./ThemeSwitch.astro";
+---
+
+<style>
+  .navbar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--navbar-background);
+    backdrop-filter: blur(1rem);
+
+    & a:has(.logo) {
+      display: flex;
+    }
+
+    & .logo {
+      width: initial;
+      margin: 0;
+    }
+
+    & .container {
+      width: 100%;
+      padding: var(--spacing-micro) 0px;
+      display: flex;
+      gap: 1rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    & .links {
+      display: flex;
+      gap: var(--spacing-micro);
+    }
+  }
+
+  .navbar-placeholder {
+    height: 80px;
+  }
+</style>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="/">
+      <img src="/assets/svg/logo.svg" class="logo" alt="Logo" height="48" />
+    </a>
+    <div class="links">
+      <Link href="/about">About</Link>
+      <Link href="/work">Work</Link>
+      <Link href="/blog">Blog</Link>
+      <ThemeSwitch />
+    </div>
+  </div>
+</nav>
+
+<div class="navbar-placeholder"></div>

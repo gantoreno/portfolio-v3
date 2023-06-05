@@ -1,0 +1,137 @@
+---
+import { getCollection } from "astro:content";
+
+import Page from "../layouts/Page.astro";
+
+import Work from "../components/Work.astro";
+import Project from "../components/Project.astro";
+import Post from "../components/Post.astro";
+import Blockquote from "../components/Blockquote.astro";
+import Link from "../components/Link.astro";
+import BaseHead from "../components/BaseHead.astro";
+
+const work = await getCollection("work");
+const projects = await getCollection("projects");
+const posts = (await getCollection("blog")).sort(
+  (a, b) => a.data.date.valueOf() - b.data.date.valueOf()
+);
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead />
+  </head>
+  <body>
+    <Page>
+      <header class="header">
+        <div class="text">
+          <h1>Hello there! I'm Gabriel</h1>
+          <h2>Software Engineer</h2>
+        </div>
+        <div class="image">
+          <img src="/assets/img/avatar.webp" alt="Avatar" />
+        </div>
+      </header>
+      <section>
+        <h2>About Me</h2>
+        <p>
+          As a highly experienced senior software engineer and technical leader,
+          I've dedicated my career to creating exceptional digital experiences
+          for clients ranging from startups to established businesses. My
+          expertise lies in full-stack web development and commercial
+          application creation, with a focus on building scalable, secure, and
+          performant solutions that meet the needs of modern businesses.
+        </p>
+        <p>
+          In addition to my professional work, I'm also deeply committed to open
+          source projects and mentoring beginner programmers. I'm an active
+          member of <Link href="https://www.electrichive.org/" target="_blank">
+            The Electric Hive
+          </Link>, where I lead a team of developers in creating innovative
+          solutions and providing mentorship and guidance to up-and-coming
+          programmers.
+        </p>
+        <p>
+          Through my years of experience, I've gained a deep understanding of
+          the latest technologies and trends in the industry, and I'm always
+          eager to discover and learn new ways to improve my craft. If you're
+          looking for a seasoned technical leader with a passion for excellence,
+          look no further than me.
+        </p>
+        <p>
+          Want to know more? Have a look at my <Link
+            href="https://linkedin.com/in/gantoreno"
+            target="_blank"
+          >
+            LinkedIn
+          </Link>.
+        </p>
+      </section>
+      <section>
+        <h2>Work & Projects</h2>
+        <p>
+          For the past couple of years, I've been working really close to known
+          companies from around the world, doing web consulting & project
+          assessments, or just belonging to an awesome team of developers.
+        </p>
+        <p>
+          These are some of the most remarkable projects I've had the fortune to
+          develop (or contribute to) and see in action:
+        </p>
+        {work.map((project) => <Work {...project} />)}
+        <p>
+          Like my designs? You might like my <Link
+            href="https://behance.net/gantoreno"
+            target="_blank"
+          >
+            Behance
+          </Link> profile as well.
+        </p>
+      </section>
+      <section>
+        <h2>Personal & open source</h2>
+        <p>
+          Open source & side projects are important too. I've spent a major part
+          of the past couple years working on web development, ai-related stuff
+          & small interesting projects. Some of them are:
+        </p>
+        <div class="projects-grid">
+          {projects.map((project) => <Project {...project} />)}
+        </div>
+        <Blockquote emoji="💼">
+          The code for this portfolio is also hosted on <Link
+            href="https://github.com/gantoreno/portfolio-v2"
+            target="_blank"
+          >
+            GitHub
+          </Link>, and it's an update from my <Link
+            href="https://gantoreno.netlify.app/"
+            target="_blank"
+          >
+            previous
+          </Link> website. Feel free to explore the old one to see how things have
+          changed, as I transitioned towards a more minimalistic approach.
+        </Blockquote>
+        <p>
+          Want to see more projects? Check out my <Link
+            href="https://github.com/gantoreno"
+            target="_blank"
+          >
+            GitHub
+          </Link> profile.
+        </p>
+      </section>
+      <section>
+        <h2>Blog</h2>
+        <p>
+          I've played with the idea of starting to write my thoughts and
+          experiences in some sort of blog, this is where I'll compile most of
+          the important things I've learned and experienced during my whole
+          coding journey. Feel free to look around!
+        </p>
+        {posts.map((post) => <Post {...post} />)}
+      </section>
+    </Page>
+  </body>
+</html>

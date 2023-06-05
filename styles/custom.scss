@@ -1,0 +1,42 @@
+.container {
+  max-width: var(--container-width);
+  margin: 0px auto;
+}
+
+.logo {
+  filter: invert(var(--color-inversion));
+}
+
+.header {
+  display: flex;
+  align-items: center;
+
+  & .text {
+    flex: 2;
+
+    & h2 {
+      color: var(--disabled-foreground);
+    }
+  }
+
+  & .image {
+    flex: 1;
+  }
+}
+
+.projects-grid {
+  margin-bottom: var(--spacing-minor);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-minor);
+}
+
+.article {
+  & h2,
+  & h3,
+  & h4,
+  & h5,
+  & h6 {
+    margin-top: var(--spacing-major);
+  }
+}

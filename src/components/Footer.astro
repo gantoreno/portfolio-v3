@@ -1,0 +1,41 @@
+---
+import Link from "./Link.astro";
+---
+
+<style>
+  .footer {
+    margin: var(--spacing-maximum) 0px;
+
+    & .content {
+      margin-bottom: var(--spacing-minor);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    & .links {
+      display: flex;
+      gap: var(--spacing-micro);
+    }
+  }
+</style>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content">
+      <strong>Follow me</strong>
+      <div class="links">
+        <Link href="https://twitter.com/gantoreno" target="_blank">
+          Twitter
+        </Link>
+        <Link href="https://instagram.com/gantoreno" target="_blank">
+          Instagram
+        </Link>
+        <Link href="https://GitHub.com/gantoreno" target="_blank">GitHub</Link>
+        <Link href="https://linkedin.com/in/gantoreno" target="_blank">
+          LinkedIn
+        </Link>
+      </div>
+    </div>
+    <small>Copyright &copy; Gabriel Moreno, 2023. All rights reserved.</small>
+  </div>
+</footer>

@@ -1,0 +1,98 @@
+---
+slug: the-first-four-months-reflections-on-being-a-tech-lead
+image: /assets/img/blog/001/og.png
+banner: /assets/img/blog/001/banner.webp
+title: "The First Four Months: Reflections on Being a Tech Lead"
+description: My journey on becoming a technical leader and the things I've learned so far.
+author: Gabriel Moreno
+date: 2023-04-07
+tags:
+  - Leadership
+  - Teamwork
+  - Growth
+---
+
+## A little bit of background
+
+It still feels as if it was yesterday when I was writing my first lines of C++ for my Programming I class. A `Hello World` over here, a `FizzBuzz` over there, it was pure joy being able to write something so simple (yet so complex for me at the time) and watching it work and display stuff on the screen.
+
+<figure>
+  <img src="/assets/img/blog/001/atom.webp" alt="Atom">
+  <figcaption>Atom, my first code editor.</figcaption>
+</figure>
+
+It was at that time when I first came across JavaScript as well, as the whole web development ecosystem. As crazy as it might sound, I was **terrible** at HTML & CSS (trust me, I couldn't wrap my head around it). Fortunately, I was following [The Coding Train](https://www.youtube.com/@TheCodingTrain) on YouTube, and I didn't need to know almost anything about those two languages – it wasn't necessary, all those videos about math topics and fun physics simulations kept me busy for some months.
+
+Fast forward a few months, and I was finally doing a "serious" project, a website for the company my dad worked for at that time that started as just a concept, and ended up being my **first commercial project**. It was crazy, and my head was blown up because of how something not that serious ended up getting into production, and like this, many other projects came in, as well as client exposure, little bits of planning & communication, and so on.
+
+Little did I know that 4 years after starting to play with web development tools, I'd be leading a whole team of developers at a great company, and today (as I'm writing this), **I still can't believe it**. How did I go from doing small animations in JavaScript to managing a team and getting full-on projects into production?
+
+It certainly hasn't been an easy one. During my 4 years in this industry, I've faced struggle, burnout, demotivation, complicated clients, unreliable teams, terrible management, and so on. I feel like at some point we all get to know that (raise your hand if you do), but thankfully, I was able to grab **a ton** of experience and invaluable lessons from those situations, which helped me shape my path to where I am today, and, in some sense, it has brought me lots of clues about what matters to become a great developer and leader.
+
+Here's a list of the **4 major lessons** I've learned throughout my 4 months as a technical leader.
+
+## Lesson 1: It's not about the code anymore
+
+At least, not as much as it is now about **communication**. If you get into this position, is because the company is confident that you're able to bring value to your team and your project other than just technical decisions about what library is best or how to style something – you're way beyond that now, and there's no doubt you'll be able to make good decisions on that matter. You are now expected to take the overall big picture of your team and enhance it from a very high level through good communication.
+
+<figure>
+  <img src="/assets/img/blog/001/communication.webp" alt="Team communication">
+  <figcaption>Get ready to communicate more than ever.</figcaption>
+</figure>
+
+And it's not just communication about technical details, but also business decisions made with the client, priorities, team allocation, project status, all of those details that you previously didn't have to worry about when being an IC (individual contributor), given that it was already managed for you.
+
+To put it in simple words, being a tech lead means being a **bridge** in communication between all parts involved in a project: clients, developers, managers, business analysts, and so on, like some sort of rosetta stone that is able to take elements from one party and bring it to the other in simple and understandable terms.
+
+You can still (and definitely will) get involved in technical discussions and important infrastructure decisions, but that's now just one part of the job, given that your technical skills now have to work in conjunction with your communication abilities to unblock your team, give better understanding to the client, help prioritize tasks with your PM, and so on.
+
+The key takeaway here is: make sure to be as reachable and open as possible, don't be afraid to communicate your thoughts and try to always simplify your ideas.
+
+## Lesson 2: Genuine interest can overcome technical difficulties
+
+We're still learning, and there might be multiple times when we won't know something – if that's the case, **say it**, be open about what you don't know, but don't just stay with it, **show that you're trying to learn**, genuine interest is what sparks confidence in your clients and teams, it shows that you're willing to learn about something you don't know to get things done and move the project forward.
+
+<figure>
+  <img src="/assets/img/blog/001/team.webp" alt="Teamwork">
+  <figcaption>Your team will always be there to support you.</figcaption>
+</figure>
+
+It's easy to say that, it's part of the job anyways, no one's getting paid for not knowing something, but the key here is the way you express it. If you stay quiet and avoid it, trust me, it'll get to you sooner than later, and it will be **way** harder to sort out than before. It's not just you that is there for your team, but your team is there for you as well. You have a handful of disciplines under your belt, and you can always **learn from them**. Being a tech lead doesn't mean being excellent at everything, it means knowing enough about most things such that you can easily take over topics that no one else could without struggle.
+
+And the best part? **You can even learn from your client as well**, and this is something not many people would dare to try. We often tend to see the clients as this big and unreachable figure that we have to be silent against when it's the opposite (remember we just talked about communication?). You're not expected to know how every business model works, so **don't be afraid to ask**, most clients would love and appreciate the fact that you're willing to know more about their operations – having this level of closeness to the people you're delivering to will empower you more than you could ever imagine.
+
+## Lesson 3: It's not your success that matters the most
+
+Make sure to **always** praise your team when they deserve it, be it in private (like a 1:1), or in public, like a management meeting. Make sure to highlight and empower their strengths and help them with their weaknesses. It will never, ever, make you less important or valuable getting to speak out for what the people you know have done right, if anything, it'll help you stand out even more because nothing shows more humbleness than helping people shine and embrace their potential.
+
+<figure>
+  <img src="/assets/img/blog/001/success.webp" alt="Team success">
+  <figcaption>Your team's success is a reflection of yours.</figcaption>
+</figure>
+
+Sometimes we, as developers, tend to focus too much on our success **because we've been told that our value relies on our performance**, and we're constantly looking to outperform everyone else, however, we as leaders are responsible for helping our team to find balance, motivation, and feel appreciated. And if you find a situation where someone's work is not getting properly credited, remember to make sure they do. Bring visibility and appreciation to all places where you feel it's missing.
+
+It's very common for people in leadership positions to not fully appreciate the great things about their teams, in fear that upper management levels would think that the team can move forward without them. **Nothing farther from the truth**. A great team is always the reflection of a great leader, and it's their success that speaks the most about yours. If a team is moving forward very fast, it's probably because you're doing a great job of getting roadblocks out of the way for them, **that's what makes you successful too**.
+
+Always remember, neither **skills** nor **technical knowledge** makes a leader as much as **humility**.
+
+### Lesson 4: You're still human, and that's your biggest strength
+
+I can't stress this enough, we're humans, we learn, we fail, and we grow. We're not supposed to know everything, we're not computers – **and that's okay** because, in the end, that's not what matters the most at our job. This one is almost therapy for me because be honest, I still struggle with this one too – wanting to know everything and feeling down when I don't. It's very important to remember that your power does not rely on **how much knowledge you have**, but on **the way you share it**, your humbleness, warmth, openness and **humanity**.
+
+<figure>
+  <img src="/assets/img/blog/001/leadership.webp" alt="Leadership">
+  <figcaption>Leadership is about letting your team know you have their backs.</figcaption>
+</figure>
+
+Companies don't need knowledge machines, **that's what computers are for**, and how good can they be on their own without a real, sentient human behind getting the most out of them? That's right. **Zero**. What companies need is great human beings that can bring human value to the business, and the team. Someone they can trust, someone that shows passion, and that can pass that same motivation to others.
+
+We spend too much time dealing with inanimate things, that we often forget how important is to stay close to what makes us feel alive – **human connections**. You, as a leader, are responsible for making your team feel like they have someone human who cares, listens, and will fight for them and their rights, be it with the management, the client, or any other entity involved. Businesses are already way too cold to also have people feel like robots or answer machines.
+
+## What's Next?
+
+There's so much more to leadership than what I've mentioned, so much that's yet to discover, at least from my side. I'm still learning and improving, and being honest, **I was scared as hell** at the beginning, but with time (and awesome support) I've been able to move forward and achieve great things alongside my team.
+
+This is just the beginning, and I hope I was able to spark some insights into what my experience has looked like on taking over this position. No day has been like the other, every day there's something new to learn, and a new way to grow. If you're thinking about growing your leadership skills, **this is the best time to do it**, it doesn't matter if you're still an IC, that's actually when it starts to show up your potential as a leader.
+
+Don't be afraid to speak out more, to show interest in the business, and to try and help others even if they don't ask directly. Always keep in mind your team, and rest assured that you're doing your best, **one day at a time**.

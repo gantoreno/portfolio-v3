@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+
+import Page from "../../layouts/Page.astro";
+
+import Post from "../../components/Post.astro";
+import BaseHead from "../../components/BaseHead.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => a.data.date.valueOf() - b.data.date.valueOf()
+);
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title="Gabriel Moreno - Whoops!"
+      description="The page you're trying to access could not be found."
+    />
+  </head>
+  <body>
+    <Page>
+      <header>
+        <h1>My Latest Posts</h1>
+      </header>
+      {
+        posts.length ? (
+          posts.map((post) => <Post {...post} />)
+        ) : (
+          <p>Whoops! No post matches your search.</p>
+        )
+      }
+    </Page>
+  </body>
+</html>

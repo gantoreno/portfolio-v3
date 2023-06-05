@@ -1,0 +1,31 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import Link from "./Link.astro";
+
+type Props = CollectionEntry<"projects">;
+
+const project = Astro.props;
+---
+
+<style>
+  .project {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & strong,
+    & p {
+      display: block;
+      margin-bottom: var(--spacing-nano);
+    }
+  }
+</style>
+
+<div class="project">
+  <div>
+    <strong>{project.data.name}</strong>
+    <p>{project.data.description}</p>
+  </div>
+  <Link href={project.data.url} target="_blank">View</Link>
+</div>

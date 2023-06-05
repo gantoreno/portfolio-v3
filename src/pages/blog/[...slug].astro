@@ -1,0 +1,65 @@
+---
+import { CollectionEntry, getCollection } from "astro:content";
+
+import Page from "../../layouts/Page.astro";
+
+import Tag from "../../components/Tag.astro";
+import BaseHead from "../../components/BaseHead.astro";
+
+import { getFormattedDate } from "../../utils/date";
+import { getReadingTime } from "../../utils/read";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+
+type Props = CollectionEntry<"blog">;
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={post.data.title}
+      description={post.data.description}
+      keywords={post.data.tags}
+      image={post.data.image}
+    />
+    <style>
+      .banner {
+        aspect-ratio: calc(16 / 9);
+      }
+
+      .tags {
+        margin-top: var(--spacing-major);
+      }
+    </style>
+  </head>
+  <body>
+    <Page>
+      <header>
+        <img src={post.data.banner} alt={post.data.title} class="banner" />
+        <h1>{post.data.title}</h1>
+        <div class="meta">
+          By <strong>{post.data.author}</strong> on {
+            getFormattedDate(post.data.date)
+          } ({getReadingTime(post.body)} min read)
+        </div>
+      </header>
+      <article class="article">
+        <Content />
+      </article>
+      <div class="tags">
+        {post.data.tags.map((tag) => <Tag name={tag} />)}
+      </div>
+    </Page>
+  </body>
+</html>

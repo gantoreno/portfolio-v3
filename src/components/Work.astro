@@ -1,0 +1,52 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Link from "./Link.astro";
+
+type Props = CollectionEntry<"work">;
+
+const work = Astro.props;
+---
+
+<style>
+  .work {
+    margin-bottom: var(--spacing-minor);
+    display: flex;
+    gap: var(--spacing-minor);
+
+    & .content {
+      display: flex;
+      flex: 2;
+      align-items: center;
+
+      & strong,
+      & p {
+        display: block;
+        margin-bottom: var(--spacing-micro);
+      }
+    }
+
+    & .image {
+      display: flex;
+      flex: 1;
+      align-items: center;
+
+      & img {
+        aspect-ratio: 1;
+        margin-bottom: 0;
+      }
+    }
+  }
+</style>
+
+<div class="work">
+  <div class="content">
+    <div>
+      <strong>{work.data.title}</strong>
+      <p>{work.data.description}</p>
+      <Link href={work.data.link} target="_blank">View</Link>
+    </div>
+  </div>
+  <div class="image">
+    <img src={work.data.thumbnail} alt={work.data.title} />
+  </div>
+</div>

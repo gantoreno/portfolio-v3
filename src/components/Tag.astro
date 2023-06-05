@@ -1,0 +1,30 @@
+---
+type Props = {
+  name: string;
+};
+
+const tag = Astro.props;
+---
+
+<style>
+  .tag {
+    text-decoration: none;
+    white-space: nowrap;
+    padding: 0.25rem 0.75rem;
+    margin-right: var(--spacing-nano);
+    border-radius: var(--border-radius);
+    background: var(--soft-background);
+    color: var(--text-foreground);
+    transition: all var(--transition-duration) ease-in-out;
+    line-height: initial;
+
+    &:hover {
+      background: var(--soft-background-hover);
+      transition: all var(--transition-duration) ease-in-out;
+    }
+  }
+</style>
+
+<a href={`/blog?tag=${tag.name}`} class="tag">
+  {tag.name}
+</a>

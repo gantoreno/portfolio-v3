@@ -1,0 +1,23 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"blockquote"> & {
+  emoji?: string;
+};
+
+const { emoji, ...rest } = Astro.props;
+---
+
+<style>
+  blockquote {
+    display: flex;
+    gap: var(--spacing-micro);
+  }
+</style>
+
+<blockquote {...rest}>
+  {emoji && <div>{emoji}</div>}
+  <div>
+    <slot />
+  </div>
+</blockquote>

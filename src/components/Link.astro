@@ -1,0 +1,25 @@
+---
+import { Icon } from "astro-icon";
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"a">;
+
+const props = Astro.props;
+---
+
+<style>
+  .icon {
+    width: 1em;
+    margin-left: 2px;
+    display: flex;
+    align-self: center;
+    user-select: none;
+  }
+</style>
+
+<a {...props}>
+  <slot />
+  <span class="icon">
+    <Icon name="uim:arrow-up-right" />
+  </span>
+</a>
