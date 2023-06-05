@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Google+Sans:400,700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Google+Sans+Mono&display=swap");
 
-:root {
+:root,
+html.light {
   --font-family: "Google Sans", Arial, Helvetica, sans-serif;
   --font-family-code: "Google Sans Mono", "Consolas", "Courier New", Courier,
     monospace;
@@ -70,13 +71,8 @@
   --navbar-background: #ffffffaa;
 }
 
-@media screen and (max-width: calc(550px + 2rem)) {
-  :root {
-    --container-width: calc(100vw - 2rem);
-  }
-}
-
-html.dark {
+html.dark,
+html.dark-system {
   --color-inversion: 1;
 
   --color-red: #aa6666;
@@ -95,4 +91,10 @@ html.dark {
   --selection-background: #ffffff21;
 
   --navbar-background: #000000aa;
+}
+
+@media screen and (max-width: calc(550px + 2rem)) {
+  :root {
+    --container-width: calc(100vw - 2rem);
+  }
 }

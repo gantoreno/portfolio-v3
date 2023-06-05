@@ -13,13 +13,33 @@ import Icon from "astro-icon";
     cursor: pointer;
   }
 
+  .sun,
+  .moon,
+  .sunset {
+    color: var(--foreground);
+  }
+
   .sun {
-    color: black;
-    display: initial;
+    display: none;
   }
 
   .moon {
-    color: white;
+    display: none;
+  }
+
+  .sunset {
+    display: initial;
+  }
+
+  :global(.light) .sun {
+    display: initial;
+  }
+
+  :global(.light) .moon {
+    display: none;
+  }
+
+  :global(.light) .sunset {
     display: none;
   }
 
@@ -30,33 +50,74 @@ import Icon from "astro-icon";
   :global(.dark) .moon {
     display: initial;
   }
+
+  :global(.dark) .sunset {
+    display: none;
+  }
 </style>
 
 <button id="toggle" name="switch" aria-label="switch">
   <Icon name="uil:sun" class="sun" />
   <Icon name="uil:moon" class="moon" />
+  <Icon name="uil:sunset" class="sunset" />
 </button>
 
 <script>
-  const theme =
-    localStorage.getItem("theme") ||
-    window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
+  const toggle = document.getElementById("toggle");
+  const theme = localStorage.getItem("theme") || "system";
 
-  if (theme === "light") {
-    document.documentElement.classList.remove("dark");
-  } else {
-    document.documentElement.classList.add("dark");
+  switch (theme) {
+    case "system":
+      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.remove("light");
+
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        document.documentElement.classList.add("dark-system");
+      } else {
+        document.documentElement.classList.remove("dark-system");
+      }
+      break;
+    case "light":
+      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light");
+      break;
+    case "dark":
+      document.documentElement.classList.remove("light");
+      document.documentElement.classList.add("dark");
+      break;
   }
 
-  // @ts-expect-error
-  document.getElementById("toggle").addEventListener("click", () => {
-    document.documentElement.classList.toggle("dark");
+  toggle?.addEventListener("click", () => {
+    const theme = localStorage.getItem("theme") || "system";
 
-    const isDark = document.documentElement.classList.contains("dark");
+    switch (theme) {
+      case "system":
+        // Change to 'light'
+        document.documentElement.classList.remove("dark");
+        document.documentElement.classList.remove("dark-system");
+        document.documentElement.classList.add("light");
+        localStorage.setItem("theme", "light");
+        break;
+      case "light":
+        // Change to 'dark'
+        document.documentElement.classList.remove("light");
+        document.documentElement.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+        break;
+      case "dark":
+        // Change to 'system'
+        document.documentElement.classList.remove("dark");
+        document.documentElement.classList.remove("light");
 
-    localStorage.setItem("theme", isDark ? "dark" : "light");
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          document.documentElement.classList.add("dark-system");
+        } else {
+          document.documentElement.classList.remove("dark-system");
+        }
+
+        localStorage.removeItem("theme");
+        break;
+    }
   });
 
   window
@@ -64,10 +125,13 @@ import Icon from "astro-icon";
     .addEventListener("change", (evt) => {
       if (localStorage.getItem("theme")) return;
 
+      document.documentElement.classList.remove("light");
+      document.documentElement.classList.remove("dark");
+
       if (evt.matches) {
-        document.documentElement.classList.add("dark");
+        document.documentElement.classList.add("dark-system");
       } else {
-        document.documentElement.classList.remove("dark");
+        document.documentElement.classList.remove("dark-system");
       }
     });
 </script>

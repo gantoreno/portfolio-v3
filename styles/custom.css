@@ -16,7 +16,7 @@
   flex: 2;
 }
 
-.header.text h2 {
+.header .text h2 {
   color: var(--disabled-foreground);
 }
 
