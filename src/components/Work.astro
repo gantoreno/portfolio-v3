@@ -12,29 +12,29 @@ const work = Astro.props;
     margin-bottom: var(--spacing-minor);
     display: flex;
     gap: var(--spacing-minor);
+  }
 
-    & .content {
-      display: flex;
-      flex: 2;
-      align-items: center;
+  .work .content {
+    display: flex;
+    flex: 2;
+    align-items: center;
+  }
 
-      & strong,
-      & p {
-        display: block;
-        margin-bottom: var(--spacing-micro);
-      }
-    }
+  .work .image {
+    display: flex;
+    flex: 1;
+    align-items: center;
+  }
 
-    & .image {
-      display: flex;
-      flex: 1;
-      align-items: center;
+  .work .content strong,
+  .work .content p {
+    display: block;
+    margin-bottom: var(--spacing-micro);
+  }
 
-      & img {
-        aspect-ratio: 1;
-        margin-bottom: 0;
-      }
-    }
+  .work .image img {
+    aspect-ratio: 1;
+    margin-bottom: 0;
   }
 </style>
 

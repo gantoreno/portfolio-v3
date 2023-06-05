@@ -10,18 +10,18 @@
 .header {
   display: flex;
   align-items: center;
+}
 
-  & .text {
-    flex: 2;
+.header .text {
+  flex: 2;
+}
 
-    & h2 {
-      color: var(--disabled-foreground);
-    }
-  }
+.header.text h2 {
+  color: var(--disabled-foreground);
+}
 
-  & .image {
-    flex: 1;
-  }
+.header .image {
+  flex: 1;
 }
 
 .projects-grid {
@@ -31,12 +31,10 @@
   gap: var(--spacing-minor);
 }
 
-.article {
-  & h2,
-  & h3,
-  & h4,
-  & h5,
-  & h6 {
-    margin-top: var(--spacing-major);
-  }
+.article h2,
+.article h3,
+.article h4,
+.article h5,
+.article h6 {
+  margin-top: var(--spacing-major);
 }

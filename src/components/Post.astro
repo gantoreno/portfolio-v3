@@ -16,38 +16,38 @@ const post = Astro.props;
     display: flex;
     gap: var(--spacing-minor);
     margin-bottom: var(--spacing-minor);
+  }
 
-    & .image {
-      display: flex;
-      flex: 1;
-      align-items: center;
+  .post .image a:not(.tag) {
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: var(--spacing-micro);
+  }
 
-      & a {
-        display: flex;
-      }
-    }
+  .post .image {
+    display: flex;
+    flex: 1;
+    align-items: center;
+  }
 
-    & img {
-      aspect-ratio: 1;
-      margin-bottom: 0;
-    }
+  .post .image a {
+    display: flex;
+  }
 
-    & .content {
-      flex: 2;
-      display: flex;
-      align-items: center;
+  .post img {
+    aspect-ratio: 1;
+    margin-bottom: 0;
+  }
 
-      & p {
-        margin-bottom: var(--spacing-micro);
-      }
+  .post .content {
+    flex: 2;
+    display: flex;
+    align-items: center;
+  }
 
-      & a:not(.tag) {
-        display: block;
-        text-decoration: none;
-        font-weight: bold;
-        margin-bottom: var(--spacing-micro);
-      }
-    }
+  .post .content p {
+    margin-bottom: var(--spacing-micro);
   }
 </style>
 

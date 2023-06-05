@@ -12,29 +12,29 @@ import ThemeSwitch from "./ThemeSwitch.astro";
     width: 100%;
     background-color: var(--navbar-background);
     backdrop-filter: blur(1rem);
+  }
 
-    & a:has(.logo) {
-      display: flex;
-    }
+  .navbar a:has(.logo) {
+    display: flex;
+  }
 
-    & .logo {
-      width: initial;
-      margin: 0;
-    }
+  .navbar .logo {
+    width: initial;
+    margin: 0;
+  }
 
-    & .container {
-      width: 100%;
-      padding: var(--spacing-micro) 0px;
-      display: flex;
-      gap: 1rem;
-      justify-content: space-between;
-      align-items: center;
-    }
+  .navbar .container {
+    width: 100%;
+    padding: var(--spacing-micro) 0px;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    & .links {
-      display: flex;
-      gap: var(--spacing-micro);
-    }
+  .navbar .links {
+    display: flex;
+    gap: var(--spacing-micro);
   }
 
   .navbar-placeholder {
