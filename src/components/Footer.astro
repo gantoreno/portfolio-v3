@@ -10,11 +10,15 @@ import Link from "./Link.astro";
       margin-bottom: var(--spacing-minor);
       display: flex;
       justify-content: space-between;
+      column-gap: var(--spacing-minor);
     }
 
     & .links {
+      flex: 1;
       display: flex;
-      gap: var(--spacing-micro);
+      flex-wrap: wrap;
+      column-gap: var(--spacing-micro);
+      justify-content: flex-end;
     }
   }
 </style>
