@@ -1,5 +1,6 @@
 ---
 import Link from "./Link.astro";
+import Logo from "./Logo.astro";
 import ThemeSwitch from "./ThemeSwitch.astro";
 ---
 
@@ -45,13 +46,7 @@ import ThemeSwitch from "./ThemeSwitch.astro";
 <nav class="navbar">
   <div class="container">
     <a href="/">
-      <img
-        src="/assets/svg/logo.svg"
-        class="logo"
-        alt="Logo"
-        width="24"
-        height="48"
-      />
+      <Logo />
     </a>
     <div class="links">
       <Link href="/about">About</Link>
