@@ -55,13 +55,28 @@ const {
 {image && <meta property="twitter:image" content={new URL(image, Astro.url)} />}
 
 <!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
 <link
+  rel="preload"
+  as="style"
   href="https://fonts.googleapis.com/css?family=Google+Sans:400,700&display=swap"
-  rel="stylesheet"
 />
 <link
+  rel="preload"
+  as="style"
   href="https://fonts.googleapis.com/css?family=Google+Sans+Mono&display=swap"
+/>
+
+<link
   rel="stylesheet"
+  media="print"
+  onload="this.onload = null; this.removeAttribute('media'); "
+  href="https://fonts.googleapis.com/css?family=Google+Sans:400,700&display=swap"
+/>
+<link
+  rel="stylesheet"
+  media="print"
+  onload="this.onload=null;this.removeAttribute('media');"
+  href="https://fonts.googleapis.com/css?family=Google+Sans+Mono&display=swap"
 />
