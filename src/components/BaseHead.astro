@@ -5,7 +5,7 @@ import {
   SITE_DESCRIPTION,
   SITE_IMAGE,
   SITE_KEYWORDS,
-  SITE_TILE,
+  SITE_TITLE,
 } from "../constants";
 
 type Props = {
@@ -18,7 +18,7 @@ type Props = {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const {
-  title = SITE_TILE,
+  title = SITE_TITLE,
   description = SITE_DESCRIPTION,
   keywords = SITE_KEYWORDS,
   image = SITE_IMAGE,
@@ -77,6 +77,6 @@ const {
 <link
   rel="stylesheet"
   media="print"
-  onload="this.onload=null;this.removeAttribute('media');"
+  onload="this.onload = null; this.removeAttribute('media');"
   href="https://fonts.googleapis.com/css?family=Google+Sans+Mono&display=swap"
 />
