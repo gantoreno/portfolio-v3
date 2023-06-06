@@ -1,8 +1,9 @@
 :root,
 html.light {
-  --font-family: "Google Sans", Arial, Helvetica, sans-serif;
-  --font-family-code: "Google Sans Mono", "Consolas", "Courier New", Courier,
-    monospace;
+  --font-family: "Google Sans", -apple-system, system-ui, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-code: "Google Sans Mono", ui-monospace, SFMono-Regular, SF Mono,
+    Menlo, Consolas, Liberation Mono, monospace;
 
   --color-inversion: 0;
 
