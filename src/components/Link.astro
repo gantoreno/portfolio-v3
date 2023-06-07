@@ -10,7 +10,6 @@ const props = Astro.props;
 <style>
   .icon {
     width: 1em;
-    margin-left: 2px;
     display: flex;
     align-self: center;
     user-select: none;
@@ -19,7 +18,5 @@ const props = Astro.props;
 
 <a {...props}>
   <slot />
-  <span class="icon">
-    <Icon name="uim:arrow-up-right" />
-  </span>
+  <Icon class="icon" name="uim:arrow-up-right" />
 </a>
