@@ -3,8 +3,10 @@ import { CollectionEntry, getCollection } from "astro:content";
 
 import Page from "../../layouts/Page.astro";
 
-import Tag from "../../components/Tag.astro";
 import BaseHead from "../../components/BaseHead.astro";
+import Figure from "../../components/Figure.astro";
+import Link from "../../components/Link.astro";
+import Tag from "../../components/Tag.astro";
 
 import { getFormattedDate } from "../../utils/date";
 import { getReadingTime } from "../../utils/read";
@@ -55,7 +57,12 @@ const { Content } = await post.render();
         </div>
       </header>
       <article class="article">
-        <Content />
+        <Content
+          components={{
+            a: Link,
+            img: Figure,
+          }}
+        />
       </article>
       <div class="tags">
         {post.data.tags.map((tag) => <Tag name={tag} />)}

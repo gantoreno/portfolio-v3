@@ -1,0 +1,12 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"img">;
+
+const props = Astro.props;
+---
+
+<figure>
+  <img {...props} />
+  <figcaption>{props.alt}</figcaption>
+</figure>
