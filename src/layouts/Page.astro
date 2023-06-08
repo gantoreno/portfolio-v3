@@ -1,10 +1,13 @@
 ---
+import Container from "../components/Container.astro";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 ---
 
 <Navbar />
-<div class="container">
+
+<Container>
   <slot />
-</div>
+</Container>
+
 <Footer />

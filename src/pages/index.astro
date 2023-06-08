@@ -21,6 +21,35 @@ const posts = (await getCollection("blog")).sort(
 <html lang="en">
   <head>
     <BaseHead />
+    <style>
+      .header {
+        display: flex;
+        align-items: center;
+      }
+
+      .header .text {
+        width: 75%;
+      }
+
+      .header .text h2 {
+        color: var(--disabled-foreground);
+        margin-bottom: 0;
+      }
+
+      .header img {
+        margin-bottom: 0;
+        width: 192px;
+        height: 192px;
+        height: fit-content;
+      }
+
+      .projects-grid {
+        margin-bottom: var(--spacing-minor);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-minor);
+      }
+    </style>
   </head>
   <body>
     <Page>
