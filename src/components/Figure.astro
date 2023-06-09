@@ -1,26 +1,12 @@
 ---
-import { Image } from "@astrojs/image/components";
 import type { HTMLAttributes } from "astro/types";
 
 type Props = HTMLAttributes<"img">;
 
-const { src, alt } = Astro.props;
+const props = Astro.props;
 ---
 
-<style>
-  image {
-    width: var(--container-width) !important;
-    height: fit-content !important;
-  }
-</style>
-
 <figure>
-  <Image
-    src={src ?? ""}
-    alt={alt ?? ""}
-    width={550}
-    height={350}
-    format="webp"
-  />
-  <figcaption>{alt}</figcaption>
+  <img {...props} />
+  <figcaption>{props.alt}</figcaption>
 </figure>
