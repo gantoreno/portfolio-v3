@@ -7,4 +7,10 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://gantoreno.com",
   integrations: [mdx(), sitemap()],
+  markdown: {
+    shikiConfig: {
+      theme: "css-variables",
+      wrap: true,
+    },
+  },
 });
