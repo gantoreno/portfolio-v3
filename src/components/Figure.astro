@@ -1,9 +1,10 @@
 ---
+import { Image } from "@astrojs/image/components";
 import type { HTMLAttributes } from "astro/types";
 
 type Props = HTMLAttributes<"img">;
 
-const props = Astro.props;
+const { src, alt } = Astro.props;
 ---
 
 <style>
@@ -14,6 +15,12 @@ const props = Astro.props;
 </style>
 
 <figure>
-  <img width="550px" height="350px" {...props} />
-  <figcaption>{props.alt}</figcaption>
+  <Image
+    src={src ?? ""}
+    alt={alt ?? ""}
+    width={550}
+    height={350}
+    format="webp"
+  />
+  <figcaption>{alt}</figcaption>
 </figure>
