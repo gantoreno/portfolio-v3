@@ -6,7 +6,14 @@ type Props = HTMLAttributes<"img">;
 const props = Astro.props;
 ---
 
+<style>
+  image {
+    width: var(--container-width) !important;
+    height: fit-content !important;
+  }
+</style>
+
 <figure>
-  <img {...props} />
+  <img width="550px" height="350px" {...props} />
   <figcaption>{props.alt}</figcaption>
 </figure>
