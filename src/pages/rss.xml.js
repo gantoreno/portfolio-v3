@@ -8,8 +8,6 @@ export async function get(context) {
     (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
   );
 
-  console.log(posts);
-
   return rss({
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
