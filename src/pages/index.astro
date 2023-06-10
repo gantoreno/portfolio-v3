@@ -13,7 +13,7 @@ import BaseHead from "../components/BaseHead.astro";
 const work = await getCollection("work");
 const projects = await getCollection("projects");
 const posts = (await getCollection("blog")).sort(
-  (a, b) => a.data.date.valueOf() - b.data.date.valueOf()
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
 ---
 

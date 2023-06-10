@@ -4,7 +4,11 @@ import { getCollection } from "astro:content";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../constants";
 
 export async function get(context) {
-  const posts = await getCollection("blog");
+  const posts = (await getCollection("blog")).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+  );
+
+  console.log(posts);
 
   return rss({
     title: SITE_TITLE,
@@ -14,7 +18,7 @@ export async function get(context) {
       title: post.data.title,
       description: post.data.description,
       pubDate: post.data.date,
-      heroImage: post.data.og,
+      heroImage: post.data.image,
       link: `/blog/${post.slug}/`,
     })),
   });
