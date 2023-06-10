@@ -43,11 +43,18 @@ const { Content } = await post.render();
       .tags {
         margin-top: var(--spacing-major);
       }
+
+      .navigation {
+        margin-bottom: var(--spacing-minor);
+      }
     </style>
   </head>
   <body>
     <Page>
       <header>
+        <div class="navigation">
+          <Link href="/" reverse>Go back</Link>
+        </div>
         <img src={post.data.banner} alt={post.data.title} class="banner" />
         <h1>{post.data.title}</h1>
         <div class="meta">

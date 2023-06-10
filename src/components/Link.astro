@@ -2,7 +2,9 @@
 import { Icon } from "astro-icon";
 import type { HTMLAttributes } from "astro/types";
 
-type Props = HTMLAttributes<"a">;
+type Props = HTMLAttributes<"a"> & {
+  reverse?: boolean;
+};
 
 const props = Astro.props;
 ---
@@ -14,9 +16,14 @@ const props = Astro.props;
     align-self: center;
     user-select: none;
   }
+
+  .reverse {
+    transform: translateX(-2px) rotate(225deg);
+  }
 </style>
 
 <a {...props}>
+  {props.reverse && <Icon class="icon reverse" name="uim:arrow-up-right" />}
   <slot />
-  <Icon class="icon" name="uim:arrow-up-right" />
+  {!props.reverse && <Icon class="icon" name="uim:arrow-up-right" />}
 </a>
