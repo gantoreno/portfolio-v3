@@ -277,7 +277,8 @@ article h6 {
 }
 
 @media screen and (max-width: calc(550px + 2rem)) {
-  :root {
+  :root,
+  html.light {
     --container-width: calc(100vw - 2rem);
   }
 }
