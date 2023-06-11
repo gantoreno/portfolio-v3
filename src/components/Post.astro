@@ -5,6 +5,7 @@ import Tag from "./Tag.astro";
 
 import { getFormattedDate } from "../utils/date";
 import { getReadingTime } from "../utils/read";
+import Link from "./Link.astro";
 
 type Props = CollectionEntry<"blog">;
 
@@ -39,7 +40,7 @@ const post = Astro.props;
     align-items: center;
   }
 
-  .post .content a:not(.tag) {
+  .post .content a.title {
     display: block;
     text-decoration: none;
     font-weight: bold;
@@ -59,11 +60,12 @@ const post = Astro.props;
   </div>
   <div class="content">
     <div class="content-inner">
-      <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+      <a href={`/blog/${post.slug}`} class="title">{post.data.title}</a>
       <p>
         {getFormattedDate(post.data.date)} ({getReadingTime(post.body)} min read)
       </p>
-      <Tag name={post.data.tags[0]} />
+      <Link href={`/blog/${post.slug}`}>Read</Link>
+      <!-- <Tag name={post.data.tags[0]} /> -->
     </div>
   </div>
 </div>
