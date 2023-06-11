@@ -44,11 +44,11 @@ const post = Astro.props;
     display: block;
     text-decoration: none;
     font-weight: bold;
-    margin-bottom: var(--spacing-micro);
+    margin-bottom: var(--spacing-nano);
   }
 
   .post .content p {
-    margin-bottom: var(--spacing-micro);
+    margin-bottom: var(--spacing-nano);
   }
 </style>
 
@@ -65,7 +65,6 @@ const post = Astro.props;
         {getFormattedDate(post.data.date)} ({getReadingTime(post.body)} min read)
       </p>
       <Link href={`/blog/${post.slug}`}>Read</Link>
-      <!-- <Tag name={post.data.tags[0]} /> -->
     </div>
   </div>
 </div>
