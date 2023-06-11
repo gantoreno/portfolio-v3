@@ -1,4 +1,5 @@
 ---
+import Icon from "astro-icon";
 type Props = {
   name: string;
 };
@@ -7,24 +8,13 @@ const tag = Astro.props;
 ---
 
 <style>
-  .tag {
-    text-decoration: none;
-    white-space: nowrap;
-    padding: 0.25rem 0.75rem;
-    margin-right: var(--spacing-nano);
-    border-radius: var(--border-radius);
-    background: var(--soft-background);
-    color: var(--text-foreground);
-    transition: all var(--transition-duration) ease-in-out;
-    line-height: initial;
-  }
-
-  .tag:hover {
-    background: var(--soft-background-hover);
-    transition: all var(--transition-duration) ease-in-out;
+  .icon {
+    width: 1em;
+    user-select: none;
+    margin-right: 2px;
   }
 </style>
 
 <a href={`/blog?tag=${tag.name}`} class="tag">
-  {tag.name}
+  <Icon class="icon" name="uil:tag-alt" />{tag.name}
 </a>

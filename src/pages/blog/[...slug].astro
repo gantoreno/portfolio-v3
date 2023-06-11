@@ -41,7 +41,10 @@ const { Content } = await post.render();
       }
 
       .tags {
-        margin-top: var(--spacing-major);
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: var(--spacing-maximum);
+        column-gap: var(--spacing-micro);
       }
 
       .navigation {
@@ -72,6 +75,7 @@ const { Content } = await post.render();
         />
       </article>
       <div class="tags">
+        <strong>Tags:</strong>
         {post.data.tags.map((tag) => <Tag name={tag} />)}
       </div>
     </Page>
