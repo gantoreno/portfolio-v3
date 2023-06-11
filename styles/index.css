@@ -178,6 +178,10 @@ footer {
   color: var(--text-foreground);
 }
 
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
 h1 {
   font-size: var(--font-size-heading-1);
 }
@@ -253,11 +257,20 @@ pre {
 }
 
 ul {
+  list-style: none;
   list-style-position: inside;
+  padding-left: var(--spacing-minor);
 }
 
-ul ul {
-  margin-left: var(--spacing-minor);
+ul li::before {
+  content: "•";
+  text-align: center;
+  color: var(--foreground);
+  font-weight: bold;
+  font-size: inherit;
+  display: inline-block;
+  width: var(--spacing-minor);
+  margin-left: calc(var(--spacing-minor) * -1);
 }
 
 section {
