@@ -83,3 +83,29 @@ const {
   onload="this.onload = null; this.removeAttribute('media');"
   href="https://fonts.googleapis.com/css?family=Google+Sans+Mono&display=swap"
 />
+
+<!-- Theme -->
+<script is:inline>
+const theme = localStorage.getItem("theme") || "system";
+
+switch (theme) {
+  case "system":
+    document.documentElement.classList.remove("dark");
+    document.documentElement.classList.remove("light");
+
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      document.documentElement.classList.add("dark-system");
+    } else {
+      document.documentElement.classList.remove("dark-system");
+    }
+    break;
+  case "light":
+    document.documentElement.classList.remove("dark");
+    document.documentElement.classList.add("light");
+    break;
+  case "dark":
+    document.documentElement.classList.remove("light");
+    document.documentElement.classList.add("dark");
+    break;
+}
+</script>
