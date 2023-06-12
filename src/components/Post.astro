@@ -55,7 +55,7 @@ const post = Astro.props;
 <div class="post">
   <div class="image">
     <a href={`/blog/${post.slug}`}>
-      <img src={post.data.banner} alt={post.data.title} />
+      <img src={post.data.banner} alt={post.data.title} loading="lazy" />
     </a>
   </div>
   <div class="content">

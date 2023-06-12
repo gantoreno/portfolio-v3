@@ -7,6 +7,6 @@ const props = Astro.props;
 ---
 
 <figure>
-  <img {...props} />
+  <img {...props} loading="lazy" />
   <figcaption>{props.alt}</figcaption>
 </figure>
