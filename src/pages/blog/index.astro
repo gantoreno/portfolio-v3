@@ -5,6 +5,7 @@ import Page from "../../layouts/Page.astro";
 
 import Post from "../../components/Post.astro";
 import BaseHead from "../../components/BaseHead.astro";
+import ImageHeader from "../../components/ImageHeader.astro";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
@@ -14,17 +15,17 @@ const posts = (await getCollection("blog")).sort(
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <BaseHead
-      title="Gabriel Moreno - Whoops!"
-      description="The page you're trying to access could not be found."
-    />
+    <BaseHead title="Gabriel Moreno - Blog" description="My latest thoughts" />
   </head>
   <body>
     <Page>
-      <header>
-        <h1>My Latest Posts</h1>
-      </header>
+      <ImageHeader
+        title="Blog"
+        subtitle="My latest thoughts"
+        image="/assets/img/avatar-typing.webp"
+      />
       <section>
+        <h3>Experiences, lessons & more</h3>
         <p>
           I've played with the idea of starting to write my thoughts and
           experiences in some sort of blog, this is where I'll compile most of
