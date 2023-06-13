@@ -23,6 +23,7 @@ html.light {
   --line-height: 1.6125;
   --navbar-height: 86.5px;
 
+  --spacing-pico: 0.25rem;
   --spacing-nano: 0.5rem;
   --spacing-micro: 1rem;
   --spacing-minor: 2rem;

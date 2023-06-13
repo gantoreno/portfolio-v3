@@ -1,25 +1,24 @@
 ---
-import Icon from "astro-icon";
 type Props = {
   name: string;
 };
 
-const tag = Astro.props;
+const props = Astro.props;
+
+function slugify(text: string) {
+  return text.replace(/\s/g, "-").toLowerCase();
+}
 ---
 
 <style>
-  a {
-    display: inline-flex;
-    margin-left: var(--spacing-micro);
+  span {
+    color: var(--disabled-foreground);
+    margin-left: var(--spacing-pico);
   }
 
-  .icon {
-    width: 1em;
-    user-select: none;
-    margin-right: 2px;
+  span::before {
+    content: "#";
   }
 </style>
 
-<a href={`/blog?tag=${tag.name}`} class="tag">
-  <Icon class="icon" name="uil:tag-alt" />{tag.name}
-</a>
+<span>{slugify(props.name)}</span>

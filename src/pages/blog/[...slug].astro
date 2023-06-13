@@ -73,10 +73,18 @@ const { Content } = await post.render();
           }}
         />
       </article>
-      <div class="tags">
+      <di class="tags">
         <strong>Tags:</strong>
-        {post.data.tags.map((tag) => <Tag name={tag} />)}
-      </div>
+        {
+          post.data.tags.map((tag, i) => {
+            return (
+              <>
+                <Tag name={tag} /> {i < post.data.tags.length - 1 ? ", " : ""}
+              </>
+            );
+          })
+        }
+      </di>
     </Page>
   </body>
 </html>
