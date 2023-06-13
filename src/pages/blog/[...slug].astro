@@ -41,8 +41,7 @@ const { Content } = await post.render();
       }
 
       .tags {
-        display: flex;
-        flex-wrap: wrap;
+        color: var(--text-foreground);
         margin-top: var(--spacing-major);
       }
 
@@ -73,18 +72,16 @@ const { Content } = await post.render();
           }}
         />
       </article>
-      <di class="tags">
+      <div class="tags">
         <strong>Tags:</strong>
         {
-          post.data.tags.map((tag, i) => {
-            return (
-              <>
-                <Tag name={tag} /> {i < post.data.tags.length - 1 ? "," : ""}
-              </>
-            );
-          })
+          post.data.tags.map((tag, i) => (
+            <>
+              <Tag name={tag} /><!-- ... -->{i < post.data.tags.length - 1 ? <span>, </span> : ""}
+            </>
+          ))
         }
-      </di>
+      </div>
     </Page>
   </body>
 </html>
