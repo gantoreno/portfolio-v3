@@ -5,7 +5,7 @@ type Props = HTMLAttributes<"blockquote"> & {
   emoji?: string;
 };
 
-const { emoji, ...rest } = Astro.props;
+const { emoji = "💬", ...rest } = Astro.props;
 ---
 
 <style>
