@@ -79,7 +79,7 @@ const { Content } = await post.render();
           post.data.tags.map((tag, i) => {
             return (
               <>
-                <Tag name={tag} /> {i < post.data.tags.length - 1 ? ", " : ""}
+                <Tag name={tag} /> {i < post.data.tags.length - 1 ? "," : ""}
               </>
             );
           })
