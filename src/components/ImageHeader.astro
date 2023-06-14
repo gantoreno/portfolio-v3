@@ -29,6 +29,22 @@ const { title, subtitle, image } = Astro.props;
     height: 192px;
     height: fit-content;
   }
+
+  @media screen and (max-width: calc(550px + 2rem)) {
+    .header {
+      width: 100%;
+      flex-direction: column-reverse;
+      align-items: baseline;
+    }
+
+    .header img {
+      margin-bottom: var(--spacing-minor);
+    }
+
+    /* .header .text {
+      text-align: center;
+    } */
+  }
 </style>
 
 <header class="header">
