@@ -34,6 +34,8 @@ const work = Astro.props;
 
   .work .image img {
     aspect-ratio: 1;
+    width: 100%;
+    height: auto;
     margin-bottom: 0;
   }
 </style>
@@ -47,6 +49,12 @@ const work = Astro.props;
     </div>
   </div>
   <div class="image">
-    <img src={work.data.thumbnail} alt={work.data.title} loading="lazy" />
+    <img
+      src={work.data.thumbnail}
+      alt={work.data.title}
+      width="172px"
+      height="172px"
+      loading="lazy"
+    />
   </div>
 </div>

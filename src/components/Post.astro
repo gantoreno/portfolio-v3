@@ -31,6 +31,8 @@ const post = Astro.props;
 
   .post img {
     aspect-ratio: 1;
+    width: 100%;
+    height: auto;
     margin-bottom: 0;
   }
 
@@ -55,7 +57,13 @@ const post = Astro.props;
 <div class="post">
   <div class="image">
     <a href={`/blog/${post.slug}`}>
-      <img src={post.data.banner} alt={post.data.title} loading="lazy" />
+      <img
+        src={post.data.banner}
+        alt={post.data.title}
+        width="172px"
+        height="172px"
+        loading="lazy"
+      />
     </a>
   </div>
   <div class="content">
