@@ -6,7 +6,15 @@ type Props = HTMLAttributes<"img">;
 const props = Astro.props;
 ---
 
+<style>
+  figure img {
+    object-fit: cover;
+    width: 100%;
+    height: initial;
+  }
+</style>
+
 <figure>
-  <img {...props} loading="lazy" />
+  <img {...props} width="500px" height="400px" loading="lazy" />
   <figcaption>{props.alt}</figcaption>
 </figure>
