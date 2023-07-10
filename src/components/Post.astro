@@ -1,7 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
-
-import Tag from "./Tag.astro";
+import { Image } from '@astrojs/image/components'
 
 import { getFormattedDate } from "../utils/date";
 import { getReadingTime } from "../utils/read";
@@ -57,11 +56,11 @@ const post = Astro.props;
 <div class="post">
   <div class="image">
     <a href={`/blog/${post.slug}`}>
-      <img
+      <Image
         src={post.data.banner}
         alt={post.data.title}
-        width="172px"
-        height="172px"
+        width={172}
+        height={172}
         loading="lazy"
       />
     </a>

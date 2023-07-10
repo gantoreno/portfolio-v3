@@ -1,4 +1,6 @@
 ---
+import { Image } from '@astrojs/image/components'
+
 import Page from "../layouts/Page.astro";
 
 import Link from "../components/Link.astro";
@@ -27,7 +29,7 @@ import BaseHead from "../components/BaseHead.astro";
     <Page>
       <div class="center">
         <div class="avatar">
-          <img src="/assets/img/avatar-sad.webp" alt="Avatar sad" />
+          <Image src="/assets/img/avatar-sad.webp" width={300} height={300} alt="Avatar sad" />
         </div>
         <h1>Whoops!</h1>
         <p>
