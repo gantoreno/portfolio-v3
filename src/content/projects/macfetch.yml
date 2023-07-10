@@ -1,3 +1,3 @@
 name: Macfetch
-description: 🍎 A macOS Neofetch alternative written in C++
-url: https://github.com/gantoreno/muso
+description: 🍎 A macOS Neofetch alternative written in Rust
+url: https://github.com/gantoreno/macfetch
