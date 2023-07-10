@@ -1,6 +1,4 @@
 ---
-import { Image } from '@astrojs/image/components'
-
 type Props = {
   title: string;
   subtitle: string;
@@ -30,7 +28,6 @@ const { title, subtitle, image } = Astro.props;
     width: 128px;
     border-radius: 0px;
     height: fit-content;
-    object-fit: cover;
   }
 
   @media screen and (max-width: calc(550px + 2rem)) {
@@ -51,5 +48,5 @@ const { title, subtitle, image } = Astro.props;
     <h1>{title}</h1>
     <h2>{subtitle}</h2>
   </div>
-  <Image src={image} width={128} height={170} aspectRatio={1} alt="Image" />
+  <img src={image} width="192" height="192" alt="Image" />
 </header>

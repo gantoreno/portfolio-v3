@@ -1,6 +1,5 @@
 ---
 import { CollectionEntry, getCollection } from "astro:content";
-import { Image } from '@astrojs/image/components'
 
 import Page from "../../layouts/Page.astro";
 
@@ -39,8 +38,6 @@ const { Content } = await post.render();
     <style>
       .banner {
         aspect-ratio: calc(16 / 9);
-        width: 100%;
-        height: auto;
       }
 
       .tags {
@@ -59,7 +56,7 @@ const { Content } = await post.render();
         <div class="navigation">
           <Link href="/" reverse>Go back</Link>
         </div>
-        <Image src={post.data.banner} alt={post.data.title} width={500} height={300} class="banner" />
+        <img src={post.data.banner} alt={post.data.title} class="banner" />
         <h1>{post.data.title}</h1>
         <div class="meta">
           By <strong>{post.data.author}</strong> on {

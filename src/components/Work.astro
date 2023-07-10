@@ -1,7 +1,5 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import { Image } from '@astrojs/image/components'
-
 import Link from "./Link.astro";
 
 type Props = CollectionEntry<"work">;
@@ -51,11 +49,11 @@ const work = Astro.props;
     </div>
   </div>
   <div class="image">
-    <Image
+    <img
       src={work.data.thumbnail}
       alt={work.data.title}
-      width={172}
-      height={172}
+      width="172px"
+      height="172px"
       loading="lazy"
     />
   </div>
