@@ -85,7 +85,9 @@ const { Content } = await post.render();
       </article>
       <div class="continue">
         <h2>Continue Reading</h2>
-        <p>Enjoying the reads? Here are some other similar posts you might be interested in. Don't miss them out!</p>
+        <p>
+          Enjoying the reads? Here are some other similar posts you might be interested in. Don't miss them out!
+        </p>
         {otherPosts.map((post) => <Post {...post} />)}
       </div>
     </Page>
