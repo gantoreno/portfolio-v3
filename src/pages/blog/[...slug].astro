@@ -7,6 +7,7 @@ import BaseHead from "../../components/BaseHead.astro";
 import Figure from "../../components/Figure.astro";
 import Link from "../../components/Link.astro";
 import Tag from "../../components/Tag.astro";
+import Post from "../../components/Post.astro";
 
 import { getFormattedDate } from "../../utils/date";
 import { getReadingTime } from "../../utils/read";
@@ -16,13 +17,18 @@ export async function getStaticPaths() {
 
   return posts.map((post) => ({
     params: { slug: post.slug },
-    props: post,
+    props: {
+      post,
+      otherPosts: posts
+        .filter(p => p.slug !== post.slug)
+        .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+    },
   }));
 }
 
-type Props = CollectionEntry<"blog">;
+type Props = {post:  CollectionEntry<"blog">, otherPosts:  CollectionEntry<"blog">[]};
 
-const post = Astro.props;
+const { post, otherPosts } = Astro.props;
 const { Content } = await post.render();
 ---
 
@@ -40,13 +46,12 @@ const { Content } = await post.render();
         aspect-ratio: calc(16 / 9);
       }
 
-      .tags {
-        color: var(--text-foreground);
-        margin-top: var(--spacing-major);
-      }
-
       .navigation {
         margin-bottom: var(--spacing-minor);
+      }
+
+      .continue {
+        margin-top: var(--spacing-major);
       }
     </style>
   </head>
@@ -59,9 +64,15 @@ const { Content } = await post.render();
         <img src={post.data.banner} alt={post.data.title} class="banner" />
         <h1>{post.data.title}</h1>
         <div class="meta">
-          By <strong>{post.data.author}</strong> on {
+          On <strong>{
             getFormattedDate(post.data.date)
-          } ({getReadingTime(post.body)} min read)
+          }</strong> ({getReadingTime(post.body)} min read) &mdash; {
+            post.data.tags.map((tag, i) => (
+              <>
+                <Tag name={tag} /><!-- ... -->{i < post.data.tags.length - 1 ? <span>, </span> : ""}
+              </>
+            ))
+          }
         </div>
       </header>
       <article>
@@ -72,15 +83,10 @@ const { Content } = await post.render();
           }}
         />
       </article>
-      <div class="tags">
-        <strong>Tags:</strong>
-        {
-          post.data.tags.map((tag, i) => (
-            <>
-              <Tag name={tag} /><!-- ... -->{i < post.data.tags.length - 1 ? <span>, </span> : ""}
-            </>
-          ))
-        }
+      <div class="continue">
+        <h2>Continue reading</h2>
+        <p>Here are some other posts you might be interested in.</p>
+        {otherPosts.map((post) => <Post {...post} />)}
       </div>
     </Page>
   </body>
