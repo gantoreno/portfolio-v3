@@ -14,7 +14,7 @@ import ImageHeader from "../components/ImageHeader.astro";
 const work = await getCollection("work");
 const projects = await getCollection("projects");
 const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 ---
 
@@ -56,9 +56,9 @@ const posts = (await getCollection("blog")).sort(
             target="_blank"
           >
             The Electric Hive
-          </Link> (a hacker and programmer collective dedicated to mentoring) I led
-          a team of developers in creating innovative solutions and provided mentorship
-          and guidance to up-and-coming programmers.
+          </Link> (a hacker and programmer collective dedicated to mentoring) I
+          led a team of developers in creating innovative solutions and provided
+          mentorship and guidance to up-and-coming programmers.
         </p>
         <p>
           Through my years of experience, I've gained a deep understanding of
@@ -118,8 +118,8 @@ const posts = (await getCollection("blog")).sort(
             target="_blank"
           >
             previous
-          </Link> website. Feel free to explore the old one to see how things have
-          changed, as I transitioned towards a more minimalistic approach.
+          </Link> website. Feel free to explore the old one to see how things
+          have changed, as I transitioned towards a more minimalistic approach.
         </Blockquote>
         <p>
           Want to see more projects? Check out my <Link
@@ -140,8 +140,8 @@ const posts = (await getCollection("blog")).sort(
         </p>
         {posts.map((post) => <Post {...post} />)}
         <p>
-          Enjoying the reads? Go to my <Link href="/blog">Blog</Link> page for more
-          stories like this.
+          Enjoying the reads? Go to my <Link href="/blog">Blog</Link> page for
+          more stories like this.
         </p>
       </section>
     </Page>
