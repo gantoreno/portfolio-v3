@@ -89,6 +89,10 @@ const { Content } = await post.render();
           Enjoying the reads? Here are some other similar posts you might be interested in. Don't miss them out!
         </p>
         {otherPosts.map((post) => <Post {...post} />)}
+        <p>
+          You can also go to my <Link href="/blog">Blog</Link> page for
+          more stories like this.
+        </p>
       </div>
     </Page>
   </body>
