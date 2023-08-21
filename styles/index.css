@@ -30,6 +30,8 @@ html.light {
   --spacing-major: 4rem;
   --spacing-maximum: 8rem;
 
+  --blur-factor: 1rem;
+
   --square-image-size: 172px;
 
   --color-black: #000000;
@@ -150,8 +152,7 @@ p,
 ol,
 ul,
 blockquote,
-figure,
-img {
+figure {
   margin-bottom: var(--spacing-minor);
 }
 

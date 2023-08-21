@@ -14,9 +14,9 @@ import ThemeSwitch from "./ThemeSwitch.astro";
     z-index: 1;
     width: 100%;
     background-color: var(--navbar-background);
-    -webkit-backdrop-filter: blur(1rem);
-    -moz-backdrop-filter: blur(1rem);
-    backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(var(--blur-factor));
+    -moz-backdrop-filter: blur(var(--blur-factor));
+    backdrop-filter: blur(var(--blur-factor));
   }
 
   .navbar a:has(.logo) {

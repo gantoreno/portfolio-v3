@@ -4,10 +4,11 @@ import { CollectionEntry, getCollection } from "astro:content";
 import Page from "../../layouts/Page.astro";
 
 import BaseHead from "../../components/BaseHead.astro";
+import BlurredImage from "../../components/BlurredImage.astro";
 import Figure from "../../components/Figure.astro";
 import Link from "../../components/Link.astro";
-import Tag from "../../components/Tag.astro";
 import Post from "../../components/Post.astro";
+import Tag from "../../components/Tag.astro";
 
 import { getFormattedDate } from "../../utils/date";
 import { getReadingTime } from "../../utils/read";
@@ -61,7 +62,7 @@ const { Content } = await post.render();
         <div class="navigation">
           <Link href="/" reverse>Go back</Link>
         </div>
-        <img src={post.data.banner} alt={post.data.title} class="banner" />
+        <BlurredImage src={post.data.banner} alt={post.data.title} class="banner" />
         <h1>{post.data.title}</h1>
         <div class="meta">
           On <strong>{

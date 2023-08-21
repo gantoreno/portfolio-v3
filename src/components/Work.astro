@@ -1,6 +1,8 @@
 ---
 import type { CollectionEntry } from "astro:content";
+
 import Link from "./Link.astro";
+import BlurredImage from "./BlurredImage.astro";
 
 type Props = CollectionEntry<"work">;
 
@@ -49,12 +51,13 @@ const work = Astro.props;
     </div>
   </div>
   <div class="image">
-    <img
+    <BlurredImage
       src={work.data.thumbnail}
       alt={work.data.title}
       width="172px"
       height="172px"
       loading="lazy"
+      inline
     />
   </div>
 </div>

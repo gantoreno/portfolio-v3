@@ -1,11 +1,11 @@
 ---
 import type { CollectionEntry } from "astro:content";
 
-import Tag from "./Tag.astro";
+import Link from "./Link.astro";
+import BlurredImage from "./BlurredImage.astro";
 
 import { getFormattedDate } from "../utils/date";
 import { getReadingTime } from "../utils/read";
-import Link from "./Link.astro";
 
 type Props = CollectionEntry<"blog">;
 
@@ -57,12 +57,13 @@ const post = Astro.props;
 <div class="post">
   <div class="image">
     <a href={`/blog/${post.slug}`}>
-      <img
+      <BlurredImage
         src={post.data.banner}
         alt={post.data.title}
         width="172px"
         height="172px"
         loading="lazy"
+        inline
       />
     </a>
   </div>
@@ -70,7 +71,8 @@ const post = Astro.props;
     <div class="content-inner">
       <a href={`/blog/${post.slug}`} class="title">{post.data.title}</a>
       <p>
-        {getFormattedDate(post.data.date)} ({getReadingTime(post.body)} min read)
+        {getFormattedDate(post.data.date)} ({getReadingTime(post.body)} min
+        read)
       </p>
       <Link href={`/blog/${post.slug}`}>Read</Link>
     </div>
