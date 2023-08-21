@@ -6,11 +6,12 @@ type Props = HTMLAttributes<"img"> & {
 };
 
 const { src, inline = false, ...rest } = Astro.props;
+const site = Astro.site;
 ---
 
 <style
   define:vars={{
-    src: `url(${src})`,
+    src: `url(${site + (src ?? "")})`,
     marginBottom: inline ? 0 : "var(--spacing-minor)",
   }}
 >
