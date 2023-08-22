@@ -1,4 +1,5 @@
 ---
+import AvatarBall from "./AvatarBall.astro";
 type Props = {
   title: string;
   subtitle: string;
@@ -11,42 +12,17 @@ const { title, subtitle, image } = Astro.props;
 <style>
   .header {
     display: flex;
-    align-items: center;
+    flex-direction: column;
   }
 
-  .header .text {
-    width: 75%;
-  }
-
-  .header .text h2 {
+  .header h2 {
     color: var(--disabled-foreground);
     margin-bottom: 0;
-  }
-
-  .header img {
-    margin-bottom: 0;
-    width: 128px;
-    border-radius: 0px;
-    height: fit-content;
-  }
-
-  @media screen and (max-width: calc(550px + 2rem)) {
-    .header {
-      width: 100%;
-      flex-direction: column-reverse;
-      align-items: baseline;
-    }
-
-    .header img {
-      margin-bottom: var(--spacing-minor);
-    }
   }
 </style>
 
 <header class="header">
-  <div class="text">
-    <h1>{title}</h1>
-    <h2>{subtitle}</h2>
-  </div>
-  <img src={image} width="192" height="192" alt="Image" />
+  <AvatarBall src={image} />
+  <h1>{title}</h1>
+  <h2>{subtitle}</h2>
 </header>

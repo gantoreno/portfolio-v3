@@ -3,6 +3,7 @@ import Page from "../layouts/Page.astro";
 
 import Link from "../components/Link.astro";
 import BaseHead from "../components/BaseHead.astro";
+import AvatarBall from "../components/AvatarBall.astro";
 ---
 
 <!DOCTYPE html>
@@ -14,8 +15,15 @@ import BaseHead from "../components/BaseHead.astro";
     />
     <style>
       .center {
+        margin: var(--spacing-maximum) 0px;
         text-align: center;
       }
+
+      .center .ball {
+        display: inline-block;
+        margin: 0px auto;
+      }
+
       .avatar {
         width: 300px;
         height: 300px;
@@ -26,8 +34,8 @@ import BaseHead from "../components/BaseHead.astro";
   <body>
     <Page>
       <div class="center">
-        <div class="avatar">
-          <img src="/assets/img/avatar-sad.webp" alt="Avatar sad" />
+        <div class="ball">
+          <AvatarBall src="/assets/img/avatar-sad.webp" />
         </div>
         <h1>Whoops!</h1>
         <p>

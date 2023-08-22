@@ -130,6 +130,7 @@ html.dark-system {
 
   font-size: 1rem;
   font-family: var(--font-family);
+
   line-height: var(--line-height);
 }
 
@@ -154,6 +155,10 @@ ul,
 blockquote,
 figure {
   margin-bottom: var(--spacing-minor);
+}
+
+em {
+  font-family: var(--font-family-italic);
 }
 
 h1,
@@ -296,6 +301,6 @@ article h6 {
 @media screen and (max-width: calc(550px + 2rem)) {
   :root,
   html.light {
-    --container-width: calc(100vw - 2rem);
+    --container-width: calc(100vw - 4rem);
   }
 }
