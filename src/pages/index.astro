@@ -10,6 +10,7 @@ import Blockquote from "../components/Blockquote.astro";
 import Link from "../components/Link.astro";
 import BaseHead from "../components/BaseHead.astro";
 import ImageHeader from "../components/ImageHeader.astro";
+import { PAGE_IDENTIFIERS } from "../constants";
 
 const work = await getCollection("work");
 const projects = await getCollection("projects");
@@ -34,6 +35,7 @@ const posts = (await getCollection("blog")).sort(
   <body>
     <Page>
       <ImageHeader
+        page={PAGE_IDENTIFIERS.HOME}
         title="Hello there! I'm Gabriel"
         subtitle="Software Engineer"
         image="/assets/img/avatar.webp"

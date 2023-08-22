@@ -1,12 +1,16 @@
 ---
 import AvatarBall from "./AvatarBall.astro";
+
+import { PAGE_EMOJIS } from "../constants";
+
 type Props = {
+  page: string;
   title: string;
   subtitle: string;
   image: string;
 };
 
-const { title, subtitle, image } = Astro.props;
+const { page, title, subtitle, image } = Astro.props;
 ---
 
 <style>
@@ -22,7 +26,7 @@ const { title, subtitle, image } = Astro.props;
 </style>
 
 <header class="header">
-  <AvatarBall src={image} />
+  <AvatarBall src={image} emoji={PAGE_EMOJIS[page]} />
   <h1>{title}</h1>
   <h2>{subtitle}</h2>
 </header>
