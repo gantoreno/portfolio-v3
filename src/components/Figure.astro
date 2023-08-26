@@ -1,8 +1,6 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
-import BlurredImage from "./BlurredImage.astro";
-
 type Props = HTMLAttributes<"img">;
 
 const props = Astro.props;
@@ -17,7 +15,7 @@ const props = Astro.props;
 </style>
 
 <figure>
-  <BlurredImage
+  <img
     src={props.src}
     alt={props.alt}
     width="500px"

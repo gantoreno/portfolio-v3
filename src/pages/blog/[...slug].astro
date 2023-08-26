@@ -62,7 +62,7 @@ const { Content } = await post.render();
         <div class="navigation">
           <Link href="/" reverse>Go back</Link>
         </div>
-        <BlurredImage src={post.data.banner} alt={post.data.title} class="banner" />
+        <img src={post.data.banner} alt={post.data.title} class="banner" />
         <h1>{post.data.title}</h1>
         <div class="meta">
           On <strong>{

@@ -2,7 +2,6 @@
 import type { CollectionEntry } from "astro:content";
 
 import Link from "./Link.astro";
-import BlurredImage from "./BlurredImage.astro";
 
 import { getFormattedDate } from "../utils/date";
 import { getReadingTime } from "../utils/read";
@@ -57,13 +56,12 @@ const post = Astro.props;
 <div class="post">
   <div class="image">
     <a href={`/blog/${post.slug}`}>
-      <BlurredImage
+      <img
         src={post.data.banner}
         alt={post.data.title}
         width="172px"
         height="172px"
         loading="lazy"
-        inline
       />
     </a>
   </div>

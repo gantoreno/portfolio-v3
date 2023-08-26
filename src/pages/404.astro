@@ -3,8 +3,6 @@ import Page from "../layouts/Page.astro";
 
 import Link from "../components/Link.astro";
 import BaseHead from "../components/BaseHead.astro";
-import AvatarBall from "../components/AvatarBall.astro";
-import { PAGE_EMOJIS, PAGE_IDENTIFIERS } from "../constants";
 ---
 
 <!DOCTYPE html>
@@ -35,12 +33,6 @@ import { PAGE_EMOJIS, PAGE_IDENTIFIERS } from "../constants";
   <body>
     <Page>
       <div class="center">
-        <div class="ball">
-          <AvatarBall
-            src="/assets/img/avatar-sad.webp"
-            emoji={PAGE_EMOJIS[PAGE_IDENTIFIERS.NOT_FOUND]}
-          />
-        </div>
         <h1>Whoops!</h1>
         <p>
           The page you're trying to access could not be found, but you can go to

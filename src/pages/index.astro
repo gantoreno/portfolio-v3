@@ -9,8 +9,6 @@ import Post from "../components/Post.astro";
 import Blockquote from "../components/Blockquote.astro";
 import Link from "../components/Link.astro";
 import BaseHead from "../components/BaseHead.astro";
-import ImageHeader from "../components/ImageHeader.astro";
-import { PAGE_IDENTIFIERS } from "../constants";
 
 const work = await getCollection("work");
 const projects = await getCollection("projects");
@@ -34,12 +32,10 @@ const posts = (await getCollection("blog")).sort(
   </head>
   <body>
     <Page>
-      <ImageHeader
-        page={PAGE_IDENTIFIERS.HOME}
-        title="Hello there! I'm Gabriel"
-        subtitle="Software Engineer"
-        image="/assets/img/avatar.webp"
-      />
+      <header>
+        <h1>Hello there! I'm Gabriel</h1>
+        <h2>Software Engineer</h2>
+      </header>
       <section>
         <h2 id="about">About me</h2>
         <p>
@@ -89,7 +85,7 @@ const posts = (await getCollection("blog")).sort(
           These are some of the most remarkable projects I've had the fortune to
           develop (or contribute to) and see in action:
         </p>
-        {work.map((project) => <Work {...project} />)}
+        {work.map((work) => <Work {...work} />)}
         <p>
           Like my designs? You might like my <Link
             href="https://behance.net/gantoreno"
