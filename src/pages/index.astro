@@ -9,6 +9,7 @@ import Post from "../components/Post.astro";
 import Blockquote from "../components/Blockquote.astro";
 import Link from "../components/Link.astro";
 import BaseHead from "../components/BaseHead.astro";
+import Heading from "../components/Heading.astro";
 
 const work = await getCollection("work");
 const projects = await getCollection("projects");
@@ -37,7 +38,7 @@ const posts = (await getCollection("blog")).sort(
         <h2>Software Engineer</h2>
       </header>
       <section>
-        <h2 id="about">About me</h2>
+        <Heading id="about">About me</Heading>
         <p>
           As a highly experienced senior software engineer and technical leader,
           I've dedicated my career to creating exceptional digital experiences
@@ -75,7 +76,7 @@ const posts = (await getCollection("blog")).sort(
         </p>
       </section>
       <section>
-        <h2 id="work">Work & projects</h2>
+        <Heading id="work">Work & projects</Heading>
         <p>
           For the past couple of years, I've been working really close to known
           companies from around the world, doing web consulting & project
@@ -129,7 +130,7 @@ const posts = (await getCollection("blog")).sort(
         </p>
       </section>
       <section>
-        <h2 id="blog">Blog</h2>
+        <Heading id="blog">Blog</Heading>
         <p>
           I've played with the idea of starting to write my thoughts and
           experiences in some sort of blog, this is where I'll compile most of
