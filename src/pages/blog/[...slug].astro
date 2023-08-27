@@ -12,6 +12,7 @@ import Tag from "../../components/Tag.astro";
 import { getFormattedDate } from "../../utils/date";
 import { getReadingTime } from "../../utils/read";
 import Breadcrumb from "../../components/Breadcrumb.astro";
+import Heading from "../../components/Heading.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -88,6 +89,7 @@ const blogBreadcrumbItems = [
           components={{
             a: Link,
             img: Figure,
+            h2: Heading
           }}
         />
       </article>
