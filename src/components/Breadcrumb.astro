@@ -1,0 +1,57 @@
+---
+type Props = {
+  items: {
+    name: string;
+    link: string;
+  }[];
+};
+
+const { items } = Astro.props;
+const lastItem = items[items.length - 1];
+---
+
+<style>
+  a {
+    color: var(--disabled-foreground);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--foreground);
+    text-decoration: underline;
+    text-decoration-thickness: from-font;
+    text-decoration-color: var(--disabled-foreground);
+  }
+
+  .active {
+    color: var(--foreground);
+    font-weight: bold;
+  }
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-minor);
+    gap: var(--spacing-nano);
+  }
+</style>
+
+<div class="breadcrumb">
+  {
+    items.map((item, i) => {
+      const isLast = i === items.length - 1;
+
+      if (isLast) return null;
+
+      return (
+        <>
+          <a href={item.link}>{item.name}</a>
+          <span class="separator">{"›"}</span>
+        </>
+      );
+    })
+  }
+  <span class="active">
+    {lastItem.name}
+  </span>
+</div>

@@ -11,6 +11,7 @@ import Tag from "../../components/Tag.astro";
 
 import { getFormattedDate } from "../../utils/date";
 import { getReadingTime } from "../../utils/read";
+import Breadcrumb from "../../components/Breadcrumb.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -26,10 +27,19 @@ export async function getStaticPaths() {
   }));
 }
 
-type Props = {post:  CollectionEntry<"blog">, otherPosts:  CollectionEntry<"blog">[]};
+type Props = {
+  post:  CollectionEntry<"blog">, 
+  otherPosts:  CollectionEntry<"blog">[]
+};
 
 const { post, otherPosts } = Astro.props;
 const { Content } = await post.render();
+
+const blogBreadcrumbItems = [
+  {name: "Home", link: "/"},
+  {name: "Blog", link: "/blog"},
+  {name: post.data.title, link: "/blog/" + post.slug}
+]
 ---
 
 <!DOCTYPE html>
@@ -58,9 +68,7 @@ const { Content } = await post.render();
   <body>
     <Page>
       <header>
-        <div class="navigation">
-          <Link href="/" reverse>Go back</Link>
-        </div>
+        <Breadcrumb items={blogBreadcrumbItems} />
         <img src={post.data.banner} alt={post.data.title} class="banner" />
         <h1>{post.data.title}</h1>
         <div class="meta">
