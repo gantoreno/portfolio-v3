@@ -4,19 +4,18 @@ const props = Astro.props;
 
 <style>
   a {
-    font-size: 1em;
-    display: none;
-    color: var(--disabled-foreground);
     text-decoration: none;
-    user-select: none;
-    margin-left: 0.5ch;
+    cursor: pointer;
   }
 
-  h2:hover a {
-    display: initial;
+  a:hover h2::after {
+    content: "⛓";
+    color: var(--disabled-foreground);
   }
 </style>
 
-<h2 {...props}>
-  <slot /><!----><a href={`#${props.id}`}>⛓</a>
-</h2>
+<a href={`#${props.id}`}>
+  <h2 {...props}>
+    <slot />
+  </h2>
+</a>
