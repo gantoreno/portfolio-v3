@@ -178,6 +178,7 @@ p,
 ol,
 ul,
 blockquote,
+img,
 figure {
   margin-bottom: var(--spacing-minor);
 }
