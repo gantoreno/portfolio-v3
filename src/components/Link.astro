@@ -9,7 +9,6 @@ const props = Astro.props;
 <style>
   a {
     text-decoration: none;
-    gap: 0.25ch;
   }
 
   .underline {
@@ -20,6 +19,8 @@ const props = Astro.props;
 
   .icon {
     user-select: none;
+    transform: translateY(1px) scale(0.9);
+    margin: 0px 1px;
   }
 </style>
 
@@ -27,5 +28,5 @@ const props = Astro.props;
   <span class="underline">
     <slot />
   </span>
-  <span class="icon">{"↗"}</span>
+  <span class="icon">{props.target === "_blank" ? "↗" : "→"}</span>
 </a>
