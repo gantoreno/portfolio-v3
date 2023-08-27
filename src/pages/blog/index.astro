@@ -6,6 +6,7 @@ import Page from "../../layouts/Page.astro";
 import Post from "../../components/Post.astro";
 import BaseHead from "../../components/BaseHead.astro";
 import Link from "../../components/Link.astro";
+import Heading from "../../components/Heading.astro";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
@@ -24,7 +25,7 @@ const posts = (await getCollection("blog")).sort(
         <h2>A peek into my latest thoughts</h2>
       </header>
       <section>
-        <h3>Experiences, lessons & more</h3>
+        <Heading id="stories">Stories, lessons & more</Heading>
         <p>
           I've played with the idea of starting to write my thoughts and
           experiences in some sort of blog, this is where I'll compile most of
