@@ -8,9 +8,14 @@ const props = Astro.props;
     cursor: pointer;
   }
 
-  a:hover h2::after {
+  a h2::after {
     content: "⛓";
     color: var(--disabled-foreground);
+    opacity: 0;
+  }
+
+  a:hover h2::after {
+    opacity: 1;
   }
 </style>
 
