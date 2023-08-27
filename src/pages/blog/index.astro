@@ -5,9 +5,7 @@ import Page from "../../layouts/Page.astro";
 
 import Post from "../../components/Post.astro";
 import BaseHead from "../../components/BaseHead.astro";
-import ImageHeader from "../../components/ImageHeader.astro";
 import Link from "../../components/Link.astro";
-import { PAGE_IDENTIFIERS } from "../../constants";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
@@ -21,12 +19,10 @@ const posts = (await getCollection("blog")).sort(
   </head>
   <body>
     <Page>
-      <ImageHeader
-        page={PAGE_IDENTIFIERS.BLOG}
-        title="My blog"
-        subtitle="A peek into my latest thoughts"
-        image="/assets/img/avatar-typing.webp"
-      />
+      <header>
+        <h1>My Blog</h1>
+        <h2>A peek into my latest thoughts</h2>
+      </header>
       <section>
         <h3>Experiences, lessons & more</h3>
         <p>
