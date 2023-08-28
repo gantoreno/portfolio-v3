@@ -6,8 +6,9 @@ const props = Astro.props;
 
 <style>
   a {
-    text-decoration: none;
-    cursor: pointer;
+    font-size: inherit;
+    display: inline-block;
+    align-self: center;
   }
 
   .icon {
@@ -21,9 +22,7 @@ const props = Astro.props;
   }
 </style>
 
-<a href={`#${props.id}`}>
-  <h2 {...props}>
-    <slot />
-    <Icon class="icon" name="link" />
-  </h2>
-</a>
+<h2 {...props}>
+  <slot />
+  <a href={`#${props.id}`}> <Icon class="icon" name="link" /></a>
+</h2>
