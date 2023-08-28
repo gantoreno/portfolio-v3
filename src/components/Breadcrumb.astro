@@ -1,4 +1,6 @@
 ---
+import Icon from "./Icon.astro";
+
 type Props = {
   items: {
     name: string;
@@ -32,10 +34,11 @@ const lastItem = items[items.length - 1];
     margin-bottom: var(--spacing-minor);
   }
 
-  .separator {
+  .caret {
+    height: 1em;
     color: var(--disabled-foreground);
-    margin: 0px var(--spacing-nano);
     user-select: none;
+    margin: 0px 2px;
   }
 </style>
 
@@ -44,11 +47,14 @@ const lastItem = items[items.length - 1];
     items.map((item, i) => {
       const isLast = i === items.length - 1;
 
-      if (isLast) return null;
+      if (isLast) return <span class="active">{lastItem.name}</span>;
 
       return (
-        <><a href={item.link}>{item.name}</a><!-- --><span class="separator">{"›"}</span></>
+        <>
+          <a href={item.link}>{item.name}</a>
+          <Icon class="caret" name="caret-forward" />
+        </>
       );
     })
-  }{" "}<span class="active">{lastItem.name}</span>
+  }
 </p>

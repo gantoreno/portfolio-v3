@@ -1,4 +1,5 @@
 ---
+import Icon from "./Icon.astro";
 const props = Astro.props;
 ---
 
@@ -8,13 +9,13 @@ const props = Astro.props;
     cursor: pointer;
   }
 
-  h2::after {
-    content: "⛓";
+  .icon {
     color: var(--disabled-foreground);
+    height: var(--font-size-heading-2);
     opacity: 0;
   }
 
-  h2:hover::after {
+  h2:hover .icon {
     opacity: 1;
   }
 </style>
@@ -22,5 +23,6 @@ const props = Astro.props;
 <a href={`#${props.id}`}>
   <h2 {...props}>
     <slot />
+    <Icon class="icon" name="link" />
   </h2>
 </a>

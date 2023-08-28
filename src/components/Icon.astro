@@ -1,0 +1,67 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+const supportedIcons = [
+  "arrow-outward",
+  "arrow-forward",
+  "link",
+  "caret-forward",
+] as const;
+
+type Props = HTMLAttributes<"svg"> & {
+  name: (typeof supportedIcons)[number];
+};
+
+const { name, ...rest } = Astro.props;
+---
+
+<style>
+  svg {
+    height: 1em;
+    width: auto;
+    color: inherit;
+    align-self: center;
+    vertical-align: middle;
+  }
+</style>
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  {...rest}
+>
+  {
+    name === "arrow-outward" && (
+      <path
+        fill="currentColor"
+        d="m16 8.4l-8.9 8.9q-.275.275-.7.275t-.7-.275q-.275-.275-.275-.7t.275-.7L14.6 7H7q-.425 0-.713-.288T6 6q0-.425.288-.713T7 5h10q.425 0 .713.288T18 6v10q0 .425-.288.713T17 17q-.425 0-.713-.288T16 16V8.4Z"
+      />
+    )
+  }
+  {
+    name === "arrow-forward" && (
+      <path
+        fill="currentColor"
+        d="M16.175 13H5q-.425 0-.713-.288T4 12q0-.425.288-.713T5 11h11.175l-4.9-4.9q-.3-.3-.288-.7t.313-.7q.3-.275.7-.288t.7.288l6.6 6.6q.15.15.213.325t.062.375q0 .2-.063.375t-.212.325l-6.6 6.6q-.275.275-.687.275T11.3 19.3q-.3-.3-.3-.713t.3-.712L16.175 13Z"
+      />
+    )
+  }
+  {
+    name === "link" && (
+      <path
+        fill="currentColor"
+        d="M11 17H7q-2.075 0-3.538-1.463T2 12q0-2.075 1.463-3.538T7 7h4v2H7q-1.25 0-2.125.875T4 12q0 1.25.875 2.125T7 15h4v2Zm-3-4v-2h8v2H8Zm5 4v-2h4q1.25 0 2.125-.875T20 12q0-1.25-.875-2.125T17 9h-4V7h4q2.075 0 3.538 1.463T22 12q0 2.075-1.463 3.538T17 17h-4Z"
+      />
+    )
+  }
+  {
+    name === "caret-forward" && (
+      <path
+        fill="currentColor"
+        d="M12.6 12L8.7 8.1q-.275-.275-.275-.7t.275-.7q.275-.275.7-.275t.7.275l4.6 4.6q.15.15.213.325t.062.375q0 .2-.063.375t-.212.325l-4.6 4.6q-.275.275-.7.275t-.7-.275q-.275-.275-.275-.7t.275-.7l3.9-3.9Z"
+      />
+    )
+  }
+</svg>

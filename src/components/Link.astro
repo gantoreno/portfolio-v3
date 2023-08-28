@@ -1,5 +1,6 @@
 ---
 import type { HTMLAttributes } from "astro/types";
+import Icon from "./Icon.astro";
 
 type Props = HTMLAttributes<"a">;
 
@@ -9,6 +10,7 @@ const props = Astro.props;
 <style>
   a {
     text-decoration: none;
+    gap: 1px;
   }
 
   .underline {
@@ -16,17 +18,11 @@ const props = Astro.props;
     text-decoration-thickness: from-font;
     font-size: 1em;
   }
-
-  .icon {
-    user-select: none;
-    transform: translateY(1px) scale(0.9);
-    margin: 0px 1px;
-  }
 </style>
 
 <a {...props}>
   <span class="underline">
     <slot />
   </span>
-  <span class="icon">{props.target === "_blank" ? "↗" : "→"}</span>
+  <Icon name={props.target === "_blank" ? "arrow-outward" : "arrow-forward"} />
 </a>
