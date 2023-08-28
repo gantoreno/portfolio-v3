@@ -1,5 +1,5 @@
 ---
-import Icon from "astro-icon";
+import Icon from "./Icon.astro";
 ---
 
 <style>
@@ -15,7 +15,7 @@ import Icon from "astro-icon";
 
   .sun,
   .moon,
-  .sunset {
+  .cloudy {
     color: var(--foreground);
   }
 
@@ -27,7 +27,7 @@ import Icon from "astro-icon";
     display: none;
   }
 
-  .sunset {
+  .cloudy {
     display: initial;
   }
 
@@ -39,7 +39,7 @@ import Icon from "astro-icon";
     display: none;
   }
 
-  :global(.light) .sunset {
+  :global(.light) .cloudy {
     display: none;
   }
 
@@ -51,7 +51,7 @@ import Icon from "astro-icon";
     display: initial;
   }
 
-  :global(.dark) .sunset {
+  :global(.dark) .cloudy {
     display: none;
   }
 
@@ -62,9 +62,9 @@ import Icon from "astro-icon";
 </style>
 
 <button id="toggle" name="switch" aria-label="switch">
-  <Icon name="uil:sun" class="sun" />
-  <Icon name="uil:moon" class="moon" />
-  <Icon name="uil:sunset" class="sunset" />
+  <Icon name="sun" class="sun" />
+  <Icon name="moon" class="moon" />
+  <Icon name="cloudy" class="cloudy" />
 </button>
 
 <script>
